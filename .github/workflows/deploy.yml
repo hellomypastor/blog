@@ -24,7 +24,7 @@ jobs:
           node-version: "16.14.0"
 
       - name: Cache node modules
-        uses: actions/cache@v1    # 缓存node_modules，避免每次跑action都要重新下载
+        uses: actions/cache@v4    # 缓存node_modules，避免每次跑action都要重新下载
         id: cache
         with:
           path: node_modules
