@@ -34,6 +34,8 @@ jobs:
 
       - name: Setup Hexo Dependencies
         run: |
+          npm config set home "https://npm.taobao.org"
+          npm config set registry "https://registry.npmmirror.com/"
           npm install hexo-cli -g
           npm install
 
