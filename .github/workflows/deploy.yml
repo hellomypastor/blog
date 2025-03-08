@@ -38,12 +38,6 @@ jobs:
           npm install hexo-cli -g
           npm install
 
-      - name: update mathjax    # kramed引擎有点问题，将其部分文件替换掉
-        run: |
-          cp correct/hexo-renderer-kramed/renderer.js node_modules/hexo-renderer-kramed/lib/
-          cp correct/kramed/inline.js node_modules/kramed/lib/rules/
-          cp correct/hexo-renderer-mathjax/mathjax.html node_modules/hexo-renderer-mathjax
-
       - name: Setup Deploy Private Key
         env:
           HEXO_DEPLOY_PRIVATE_KEY: ${{ secrets.HEXO_DEPLOY_PRI }}    # 这个就是Source仓库的私钥
