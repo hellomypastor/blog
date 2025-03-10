@@ -1,4 +1,19 @@
 <div class="footer" id="footer">
+    <div>
+        <% currPage = page.current; %>
+        <% if ( currPage !== 1) {  %>
+            <% if ( page.current != 2 ) {  %>
+            <a href='/page/<%= currPage-1; %>'><% }%><% if ( page.current == 2 ) {  %><a href='/'><% }%>
+                <i style="font-size:18px;" class="fa">&#xf104</i>
+            </a>
+        <% }%>
+        Page <%= currPage %> of <%= page.total %>
+        <% if ( currPage !== page.total ) {  %>
+            <a href='/page/<%= page.current+1; %>'>
+                <i style="font-size:18px;" class="fa">&#xf105</i>
+            </a>
+        <% }%>
+    </div>
     <p>Copyright © 2020 <a class="flink" href="https://hexo.io">Hexo</a>-<a class="flink" href="https://github.com/sanjinhub/hexo-theme-geek">Geek</a>.
         <label class="el-switch el-switch-green el-switch-sm" style="vertical-align: sub;">
             <input type="checkbox" name="switch" id="update_style">
