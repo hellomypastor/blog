@@ -37,6 +37,7 @@ jobs:
           npm config set registry "https://registry.npmmirror.com/"
           npm install hexo-cli -g
           npm install hexo-deployer-git --save
+          npm install hexo-asset-img --save
           npm install
 
       - name: Setup Deploy Private Key
