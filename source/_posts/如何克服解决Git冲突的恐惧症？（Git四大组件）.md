@@ -14,7 +14,7 @@ Git有四大组件，分别是：
 
 当git初始化后，目录下就生成了.git文件夹，存放着与git相关的所有内容，我们看下目录下具体的内容：
 
-![](https://user-gold-cdn.xitu.io/2018/3/9/1620b296506043e3?w=1490&h=874&f=png&s=494715)
+![](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/3/9/1620b296506043e3~tplv-t2oaga2asx-jj-mark:3024:0:0:0:q75.awebp)
 
 所有的组件都存放在objects文件夹中：
 
