@@ -14,20 +14,7 @@
             </a>
         <% }%>
     </div>
-    <div class="copyright">
-        {%- set copyright_year = date(null, 'YYYY') %}
-        &copy; {% if theme.footer.since and theme.footer.since != copyright_year %}{{ theme.footer.since }} – {% endif %}
-        <span itemprop="copyrightYear">{{ copyright_year }}</span>
-        <span class="with-love">
-          <i class="{{ theme.footer.icon.name }}"></i>
-        </span>
-        <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright or author }}</span>
-    </div>
-    <div class="powered-by">
-        {%- set next_site = 'https://github.com/sanjinhub/hexo-theme-geek' %}
-        {{- __('footer.powered', next_url('https://hexo.io', 'Hexo') + ' & ' + next_url(next_site, 'Geek')) }}
-    </div>
-    <p>Copyright © 2020 <a class="flink" href="https://hexo.io">Hexo</a>-<a class="flink" href="https://github.com/sanjinhub/hexo-theme-geek">Geek</a>.
+    <p>Copyright © 2015 - 2025 <i class="el-icon-info"></i> Powered by <a class="flink" href="https://hexo.io">Hexo</a>-<a class="flink" href="https://github.com/sanjinhub/hexo-theme-geek">Geek</a>.
         <label class="el-switch el-switch-green el-switch-sm" style="vertical-align: sub;">
             <input type="checkbox" name="switch" id="update_style">
             <span class="el-switch-style"></span>
