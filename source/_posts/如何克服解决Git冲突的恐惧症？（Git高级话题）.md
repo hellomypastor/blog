@@ -3,6 +3,8 @@ date: 2018-03-20 07:55:41
 categories: Git
 tags: [Git]
 ---
+<!--more-->
+
 # 多分支rebase
 
 多分支的情况下，我们往往希望得到有序的提交历史，看下面的例子：
@@ -19,8 +21,6 @@ git rebase another master
 ```
 
 ![](https://user-gold-cdn.xitu.io/2018/3/20/16243c2acbce1666?w=273&h=669&f=png&s=24669)
-
-<!--more-->
 
 # 两个父节点
 

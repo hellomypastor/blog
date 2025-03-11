@@ -5,6 +5,8 @@ tags: [Java,Java9新特性]
 ---
 最近从 `Oracle Jdk8` 切换到 `OpenJdk 10` 后，遇到了一个诡异的问题，通过 Debug 排查后发现原来是 `Stream.peek()` 方法在搞鬼，特此记录下，以防后续使用 `Java 9及以上` 版本时再次犯同样的错误。
 
+<!--more-->
+
 示例代码如下：
 
 ```java
@@ -30,8 +32,6 @@ c
 切换到 `Java 9` 后，没有任何输出!!!
 
 突然有点怀疑人生的感觉-_-#
-
-<!--more-->
 
 于是就去 `StackOverFlow` （如果你不知道的话，赶紧去访问看看～）问答网站上搜索，发现也有人出现一样的问题：[Stream.peek() method in Java 8 vs Java 9](https://stackoverflow.com/questions/48221783/stream-peek-method-in-java-8-vs-java-9)
 
