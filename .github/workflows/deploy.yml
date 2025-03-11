@@ -38,7 +38,7 @@ jobs:
           npm install hexo-cli -g
           npm install hexo-deployer-git --save
           npm install hexo-asset-img --save
-          npm install hexo-wordcount --save 
+          npm install hexo-word-counter --save
           npm install hexo-admin --save 
           npm install
 
