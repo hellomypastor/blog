@@ -49,7 +49,7 @@ Stream<T> peek(Consumer<? super T> action);
 
 示意图如下：
 
-![](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/2/8/16175d1f567a2012~tplv-t2oaga2asx-jj-mark:3024:0:0:0:q75.awebp)
+![](stream-peek-method-in-java-8-vs-java-9/stream-peek.png)
 
 #### Java 9 中 Stream.peek() 不执行的原因
 
