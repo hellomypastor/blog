@@ -948,5 +948,5 @@ post_wordcount:
   item_text: true
   wordcount: true
   min2read: true
-  totalcount: false
+  totalcount: true
   separated_meta: true
