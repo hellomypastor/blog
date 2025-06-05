@@ -1,4 +1,4 @@
-title: 快来领取你的免费“AI 每日新闻”
+title: 快来领取你的免费AI每日新闻
 date: 2025-06-05 12:30:46
 categories: Personal
 tags: [GithubActions,Vercel,AI,RSS]
