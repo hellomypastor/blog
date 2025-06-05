@@ -950,3 +950,8 @@ images: images
 #  min2read: true
 #  totalcount: true
 #  separated_meta: true
+
+post_asset_folder: true
+marked:
+  prependRoot: true
+  postAsset: true

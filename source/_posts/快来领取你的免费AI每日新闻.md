@@ -19,7 +19,8 @@ AI 就像一场风暴，从最初的 ChatGPT，到 Copilot RAG，到 Workflow Ag
 
 <h3 id="UL7ED">实现过程</h3>
 <h4 id="AqH0p">Fork 项目</h4>
-![](快来领取你的免费AI每日新闻/fork.png)
+
+![](./快来领取你的免费AI每日新闻/fork.png)
 
 我的仓库地址：[https://github.com/hellomypastor/daily-news](https://github.com/hellomypastor/daily-news)
 
@@ -91,11 +92,11 @@ def request_siliconflow(provider: AIProvider, prompt, content):
 因为 Qwen3 的 API 兼容了 OpenAI 的 sdk，所以实现起来比较简单。
 
 > 我使用的是 硅基流动 平台，[https://cloud.siliconflow.cn/models](https://cloud.siliconflow.cn/models)，使用的是 Qwen3 8B 的免费模型
->
-> ![](快来领取你的免费AI每日新闻/siliconflow-1.png)
->
-> ![](快来领取你的免费AI每日新闻/siliconflow-2.png)
->
+
+![](快来领取你的免费AI每日新闻/siliconflow-1.png)
+
+![](快来领取你的免费AI每日新闻/siliconflow-2.png)
+
 
 <h4 id="PI27G">同步配置</h4>
 <font style="color:rgb(25, 27, 31);">在仓库目录下找到 .github/workflows/main.yml，修改同步配置：</font>
@@ -217,9 +218,11 @@ Vercel 部署页面：
 
 <h4 id="DvPwg">扩展</h4>
 有一个 Chrome 插件，正好是做这个事情的，可以填自己的 API key 免费用，还支持配钉钉机器人定时推送：https://chromewebstore.google.com/detail/tidyread-read-more-in-les/gpfnpbpkadjgeoneammbiiidbkgkncaa
+
 ![](快来领取你的免费AI每日新闻/tidyread.png)
 
 <h3 id="e5gcs">原理</h3>
+
 ![](快来领取你的免费AI每日新闻/principle.png)
 
 > 1. <font style="color:rgb(31, 35, 40);">GitHub Actions 自动从 RSS 采集数据</font>
