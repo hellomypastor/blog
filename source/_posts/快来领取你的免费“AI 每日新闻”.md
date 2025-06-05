@@ -19,7 +19,7 @@ AI 就像一场风暴，从最初的 ChatGPT，到 Copilot RAG，到 Workflow Ag
 
 <h3 id="UL7ED">实现过程</h3>
 <h4 id="AqH0p">Fork 项目</h4>
-![](快来领取你的免费“AI 每日新闻”/fork.png)
+![](快来领取你的免费AI每日新闻/fork.png)
 
 我的仓库地址：[https://github.com/hellomypastor/daily-news](https://github.com/hellomypastor/daily-news)
 
@@ -92,9 +92,9 @@ def request_siliconflow(provider: AIProvider, prompt, content):
 
 > 我使用的是 硅基流动 平台，[https://cloud.siliconflow.cn/models](https://cloud.siliconflow.cn/models)，使用的是 Qwen3 8B 的免费模型
 >
-> ![](快来领取你的免费“AI 每日新闻”/siliconflow-1.png)
+> ![](快来领取你的免费AI每日新闻/siliconflow-1.png)
 >
-> ![](快来领取你的免费“AI 每日新闻”/siliconflow-2.png)
+> ![](快来领取你的免费AI每日新闻/siliconflow-2.png)
 >
 
 <h4 id="PI27G">同步配置</h4>
@@ -179,44 +179,48 @@ jobs:
 
 [https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhellomypastor%2FAIDailyNews&teamSlug=hellomypastors-projects](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhellomypastor%2FAIDailyNews&teamSlug=hellomypastors-projects)
 
-![](快来领取你的免费“AI 每日新闻”/vercel-new.png)
+![](快来领取你的免费AI每日新闻/vercel-new.png)
 
 在 Vercel 中新增 Deploy Hooks：
 
-![](快来领取你的免费“AI 每日新闻”/vercel-hook-1.png)
+![](快来领取你的免费AI每日新闻/vercel-hook-1.png)
 
 在仓库中配置 Webhooks：
 
-![](快来领取你的免费“AI 每日新闻”/vercel-hook-2.png)
+![](快来领取你的免费AI每日新闻/vercel-hook-2.png)
 
 <font style="color:rgb(25, 27, 31);">为 GitHub Actions 添加代码提交权限，访问仓库的 Settings > Actions > General页面，找到 Workflow permissions 的设置项，将选项配置为 Read and write permissions，支持 CI 将数据更新后提交到仓库中</font>
 
-![](快来领取你的免费“AI 每日新闻”/workflow-permission.png)
+![](快来领取你的免费AI每日新闻/workflow-permission.png)
 
 <font style="color:rgb(25, 27, 31);">访问仓库的 Settings > Security > Secrets and variables > Actions 页面，添加账号及密钥信息</font>
 
-![](快来领取你的免费“AI 每日新闻”/action.png)
+![](快来领取你的免费AI每日新闻/action.png)
 
 <h4 id="OtnTy">自定义域名</h4>
 Vercel 提供了域名，但域名比较长，不易记住
 
-![](快来领取你的免费“AI 每日新闻”/domain-1.png)
+![](快来领取你的免费AI每日新闻/domain-1.png)
 
 可以自定义域名：
 
-![](快来领取你的免费“AI 每日新闻”/domain-2.png)
+![](快来领取你的免费AI每日新闻/domain-2.png)
 
 <h4 id="DvPwg">效果</h4>
 Vercel 部署页面：
 
-![](快来领取你的免费“AI 每日新闻”/vercel-deploy.png)
+![](快来领取你的免费AI每日新闻/vercel-deploy.png)
 
 生成的新闻总览页面：
 
-![](快来领取你的免费“AI 每日新闻”/demo.png)
+![](快来领取你的免费AI每日新闻/demo.png)
+
+<h4 id="DvPwg">扩展</h4>
+有一个 Chrome 插件，正好是做这个事情的，可以填自己的 API key 免费用，还支持配钉钉机器人定时推送：https://chromewebstore.google.com/detail/tidyread-read-more-in-les/gpfnpbpkadjgeoneammbiiidbkgkncaa
+![](快来领取你的免费AI每日新闻/tidyread.png)
 
 <h3 id="e5gcs">原理</h3>
-![](快来领取你的免费“AI 每日新闻”/principle.png)
+![](快来领取你的免费AI每日新闻/principle.png)
 
 > 1. <font style="color:rgb(31, 35, 40);">GitHub Actions 自动从 RSS 采集数据</font>
 > 2. <font style="color:rgb(25, 27, 31);">采集后的数据 输入给 AI，AI 进行分析总结后，生成 MarkDown 文档后，push 到仓库中</font>
