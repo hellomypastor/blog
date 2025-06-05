@@ -1,30 +1,30 @@
-title: ������ȡ�����ѡ�AI ÿ�����š�
+title: 快来领取你的免费“AI 每日新闻”
 date: 2025-06-05 12:30:46
 categories: Personal
 tags: [GithubActions,Vercel,AI,RSS]
 ---
-> <font style="color:rgb(31, 35, 40);">���� RSS ��ַ��ÿ�춨ʱ�ɼ�һ��ǰһ������ݣ�ͨ�� GPT ���з����ܽᣬ�γ�һ��ÿ�ձ��棬</font>���� Github Actioins & Vercel <font style="color:rgb(31, 35, 40);">һ��������������ÿ����������,֧�� OpenAI��Gemini Pro��Qwen3 ģ�͡�</font>
+> <font style="color:rgb(31, 35, 40);">基于 RSS 地址，每天定时采集一次前一天的内容，通过 GPT 进行分析总结，形成一份每日报告，</font>利用 Github Actioins & Vercel <font style="color:rgb(31, 35, 40);">一键部署独属于你的每日新闻总览,支持 OpenAI、Gemini Pro、Qwen3 模型。</font>
 >
-> �ҵ�ÿ��������ҳ��[https://ai.anchen.me/](https://ai.anchen.me/)
+> 我的每日新闻主页：[https://ai.anchen.me/](https://ai.anchen.me/)
 >
 
 <!--more-->
 
-<h3 id="GW1td">Ե��</h3>
-AI ����һ���籩��������� ChatGPT���� Copilot RAG���� Workflow Agent���� Cursor���ٵ� Devin����չ���ٶ�֮�죬�������죬��Ҫʱ�̹�עҵ����¼������·��򣬿�����ÿ��������ȥ�Ѽ���Ϣ�Ѿ��������������ˣ��������룬�Ƿ�������Զ����ķ�ʽȥ�Ѽ���Ϣ��ͨ�� AI ȥ�����ܽᣬ�γ�һ�ݱ��档
+<h3 id="GW1td">缘起</h3>
+AI 就像一场风暴，从最初的 ChatGPT，到 Copilot RAG，到 Workflow Agent，到 Cursor，再到 Devin，发展的速度之快，日新月异，需要时刻关注业界的新技术、新方向，靠人肉每天吭哧吭哧去搜集信息已经不能满足需求了，所以在想，是否可以用自动化的方式去搜集信息，通过 AI 去分析总结，形成一份报告。
 
 
 
-�����£������и���Դ���߿��������ҵ�����[https://github.com/zhangferry/AIDailyNews](https://github.com/zhangferry/AIDailyNews)
+搜了下，网上有个开源工具可以满足我的诉求：[https://github.com/zhangferry/AIDailyNews](https://github.com/zhangferry/AIDailyNews)
 
-<h3 id="UL7ED">ʵ�ֹ���</h3>
-<h4 id="AqH0p">Fork ��Ŀ</h4>
-![](������ȡ�����ѡ�AI ÿ�����š�/fork.png)
+<h3 id="UL7ED">实现过程</h3>
+<h4 id="AqH0p">Fork 项目</h4>
+![](快来领取你的免费“AI 每日新闻”/fork.png)
 
-�ҵĲֿ��ַ��[https://github.com/hellomypastor/daily-news](https://github.com/hellomypastor/daily-news)
+我的仓库地址：[https://github.com/hellomypastor/daily-news](https://github.com/hellomypastor/daily-news)
 
-<h4 id="XnX8O"><font style="color:rgb(25, 27, 31);">���Ի�����</font></h4>
-<font style="color:rgb(25, 27, 31);">�ڲֿ�Ŀ¼���ҵ� workflow/resources/rss.json���ҵ��������ݲ��޸ĳ����Լ���Ҫ�ģ�</font>
+<h4 id="XnX8O"><font style="color:rgb(25, 27, 31);">个性化配置</font></h4>
+<font style="color:rgb(25, 27, 31);">在仓库目录下找到 workflow/resources/rss.json，找到以下内容并修改成你自己想要的：</font>
 
 ```json
 {
@@ -64,8 +64,8 @@ AI ����һ���籩��������� ChatGPT���� Copilot RAG���� Workflow Agent���� Cursor�
 }
 ```
 
-<h4 id="H6sLM">ģ��֧��</h4>
-�ֿ���ֻ֧���� OpenAI �� Gemini ģ�ͣ������������޸ģ�֧���� Qwen3 ģ�ͣ�����ɲ鿴 /workflow/gpt/requests.py ����
+<h4 id="H6sLM">模型支持</h4>
+仓库里只支持了 OpenAI 和 Gemini 模型，这里我做了修改，支持了 Qwen3 模型，具体可查看 /workflow/gpt/requests.py 内容
 
 ```python
 def request_siliconflow(provider: AIProvider, prompt, content):
@@ -88,17 +88,17 @@ def request_siliconflow(provider: AIProvider, prompt, content):
     return chat_completion.choices[0].message.content
 ```
 
-��Ϊ Qwen3 �� API ������ OpenAI �� sdk������ʵ�������Ƚϼ򵥡�
+因为 Qwen3 的 API 兼容了 OpenAI 的 sdk，所以实现起来比较简单。
 
-> ��ʹ�õ��� ������� ƽ̨��[https://cloud.siliconflow.cn/models](https://cloud.siliconflow.cn/models)��ʹ�õ��� Qwen3 8B �����ģ��
+> 我使用的是 硅基流动 平台，[https://cloud.siliconflow.cn/models](https://cloud.siliconflow.cn/models)，使用的是 Qwen3 8B 的免费模型
 >
-> ![](������ȡ�����ѡ�AI ÿ�����š�/siliconflow-1.png)
+> ![](快来领取你的免费“AI 每日新闻”/siliconflow-1.png)
 >
-> ![](������ȡ�����ѡ�AI ÿ�����š�/siliconflow-2.png)
+> ![](快来领取你的免费“AI 每日新闻”/siliconflow-2.png)
 >
 
-<h4 id="PI27G">ͬ������</h4>
-<font style="color:rgb(25, 27, 31);">�ڲֿ�Ŀ¼���ҵ� .github/workflows/main.yml���޸�ͬ�����ã�</font>
+<h4 id="PI27G">同步配置</h4>
+<font style="color:rgb(25, 27, 31);">在仓库目录下找到 .github/workflows/main.yml，修改同步配置：</font>
 
 ```yaml
 
@@ -174,61 +174,61 @@ jobs:
 
 ```
 
-<h4 id="LQuSS">���� & ��ʱͬ��</h4>
-ʹ�� Vercel �����Զ�������ַ�еĸ���·����Ϣ����
+<h4 id="LQuSS">部署 & 定时同步</h4>
+使用 Vercel 部署（自定更换地址中的个人路径信息）：
 
 [https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhellomypastor%2FAIDailyNews&teamSlug=hellomypastors-projects](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhellomypastor%2FAIDailyNews&teamSlug=hellomypastors-projects)
 
-![](������ȡ�����ѡ�AI ÿ�����š�/vercel-new.png)
+![](快来领取你的免费“AI 每日新闻”/vercel-new.png)
 
-�� Vercel ������ Deploy Hooks��
+在 Vercel 中新增 Deploy Hooks：
 
-![](������ȡ�����ѡ�AI ÿ�����š�/vercel-hook-1.png)
+![](快来领取你的免费“AI 每日新闻”/vercel-hook-1.png)
 
-�ڲֿ������� Webhooks��
+在仓库中配置 Webhooks：
 
-![](������ȡ�����ѡ�AI ÿ�����š�/vercel-hook-2.png)
+![](快来领取你的免费“AI 每日新闻”/vercel-hook-2.png)
 
-<font style="color:rgb(25, 27, 31);">Ϊ GitHub Actions ���Ӵ����ύȨ�ޣ����ʲֿ�� Settings > Actions > Generalҳ�棬�ҵ� Workflow permissions ���������ѡ������Ϊ Read and write permissions��֧�� CI �����ݸ��º��ύ���ֿ���</font>
+<font style="color:rgb(25, 27, 31);">为 GitHub Actions 添加代码提交权限，访问仓库的 Settings > Actions > General页面，找到 Workflow permissions 的设置项，将选项配置为 Read and write permissions，支持 CI 将数据更新后提交到仓库中</font>
 
-![](������ȡ�����ѡ�AI ÿ�����š�/workflow-permission.png)
+![](快来领取你的免费“AI 每日新闻”/workflow-permission.png)
 
-<font style="color:rgb(25, 27, 31);">���ʲֿ�� Settings > Security > Secrets and variables > Actions ҳ�棬�����˺ż���Կ��Ϣ</font>
+<font style="color:rgb(25, 27, 31);">访问仓库的 Settings > Security > Secrets and variables > Actions 页面，添加账号及密钥信息</font>
 
-![](������ȡ�����ѡ�AI ÿ�����š�/action.png)
+![](快来领取你的免费“AI 每日新闻”/action.png)
 
-<h4 id="OtnTy">�Զ�������</h4>
-Vercel �ṩ���������������Ƚϳ������׼�ס
+<h4 id="OtnTy">自定义域名</h4>
+Vercel 提供了域名，但域名比较长，不易记住
 
-![](������ȡ�����ѡ�AI ÿ�����š�/domain-1.png)
+![](快来领取你的免费“AI 每日新闻”/domain-1.png)
 
-�����Զ���������
+可以自定义域名：
 
-![](������ȡ�����ѡ�AI ÿ�����š�/domain-2.png)
+![](快来领取你的免费“AI 每日新闻”/domain-2.png)
 
-<h4 id="DvPwg">Ч��</h4>
-Vercel ����ҳ�棺
+<h4 id="DvPwg">效果</h4>
+Vercel 部署页面：
 
-![](������ȡ�����ѡ�AI ÿ�����š�/vercel-deploy.png)
+![](快来领取你的免费“AI 每日新闻”/vercel-deploy.png)
 
-���ɵ���������ҳ�棺
+生成的新闻总览页面：
 
-![](������ȡ�����ѡ�AI ÿ�����š�/demo.png)
+![](快来领取你的免费“AI 每日新闻”/demo.png)
 
-<h3 id="e5gcs">ԭ��</h3>
-![](������ȡ�����ѡ�AI ÿ�����š�/principle.png)
+<h3 id="e5gcs">原理</h3>
+![](快来领取你的免费“AI 每日新闻”/principle.png)
 
-> 1. <font style="color:rgb(31, 35, 40);">GitHub Actions �Զ��� RSS �ɼ�����</font>
-> 2. <font style="color:rgb(25, 27, 31);">�ɼ�������� ����� AI��AI ���з����ܽ������ MarkDown �ĵ���push ���ֿ���</font>
-> 3. <font style="color:rgb(31, 35, 40);">ͨ�� Vercel �Զ�����</font>
-> 4. <font style="color:rgb(31, 35, 40);">֧�� OpenAI��Gemini��Qwen3 ��ģ��</font>
+> 1. <font style="color:rgb(31, 35, 40);">GitHub Actions 自动从 RSS 采集数据</font>
+> 2. <font style="color:rgb(25, 27, 31);">采集后的数据 输入给 AI，AI 进行分析总结后，生成 MarkDown 文档后，push 到仓库中</font>
+> 3. <font style="color:rgb(31, 35, 40);">通过 Vercel 自动部署</font>
+> 4. <font style="color:rgb(31, 35, 40);">支持 OpenAI、Gemini、Qwen3 等模型</font>
 >
 
-<h3 id="YL2kJ">д�����</h3>
-��������̲���ʱ 1 Сʱ�����˲����ʱ�������˼�����֮�⣬��������˳��������Ȥ��ͬѧ�������ԡ�
+<h3 id="YL2kJ">写在最后</h3>
+整个搭建过程差不多耗时 1 小时，除了部署的时候遇到了几个坑之外，其他都很顺利，有兴趣的同学可以试试。
 
-�� AI ȥ�����Ƿ����ܽ� AI ��ص����ţ���������ҿ������Ǻ���Ȥ�ܿ�ġ�AI ʱ���������������л��ᣬ��Ҫ�£������ȥ����ֵ�����ʤ����
+让 AI 去帮我们分析总结 AI 相关的新闻，这件事在我看来还是很有趣很酷的。AI 时代，事情再难总有机会，不要怕，坚持下去，坚持到最后的胜利。
 
-<h3 id="nwIXL">�ο�</h3>
-��1��[https://github.com/zhangferry/AIDailyNews](https://github.com/zhangferry/AIDailyNews)
+<h3 id="nwIXL">参考</h3>
+【1】[https://github.com/zhangferry/AIDailyNews](https://github.com/zhangferry/AIDailyNews)
 
