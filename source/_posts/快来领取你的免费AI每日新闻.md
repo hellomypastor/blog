@@ -20,7 +20,7 @@ AI 就像一场风暴，从最初的 ChatGPT，到 Copilot RAG，到 Workflow Ag
 <h3 id="UL7ED">实现过程</h3>
 <h4 id="AqH0p">Fork 项目</h4>
 
-![fork.png](fork.png)
+![fork.png](快来领取你的免费AI每日新闻/fork.png)
 
 我的仓库地址：[https://github.com/hellomypastor/daily-news](https://github.com/hellomypastor/daily-news)
 
