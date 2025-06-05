@@ -10,21 +10,21 @@ tags: [GithubActions,Vercel,AI,RSS]
 
 <!--more-->
 
-<h3 id="GW1td">缘起</h3>
+### 缘起
 AI 就像一场风暴，从最初的 ChatGPT，到 Copilot RAG，到 Workflow Agent，到 Cursor，再到 Devin，发展的速度之快，日新月异，需要时刻关注业界的新技术、新方向，靠人肉每天吭哧吭哧去搜集信息已经不能满足需求了，所以在想，是否可以用自动化的方式去搜集信息，通过 AI 去分析总结，形成一份报告。
 
 
 
 搜了下，网上有个开源工具可以满足我的诉求：[https://github.com/zhangferry/AIDailyNews](https://github.com/zhangferry/AIDailyNews)
 
-<h3 id="UL7ED">实现过程</h3>
-<h4 id="AqH0p">Fork 项目</h4>
+### 实现过程
+#### Fork 项目
 
 ![fork.png](快来领取你的免费AI每日新闻/fork.png)
 
 我的仓库地址：[https://github.com/hellomypastor/daily-news](https://github.com/hellomypastor/daily-news)
 
-<h4 id="XnX8O"><font style="color:rgb(25, 27, 31);">个性化配置</font></h4>
+#### 个性化配置
 <font style="color:rgb(25, 27, 31);">在仓库目录下找到 workflow/resources/rss.json，找到以下内容并修改成你自己想要的：</font>
 
 ```json
@@ -65,7 +65,7 @@ AI 就像一场风暴，从最初的 ChatGPT，到 Copilot RAG，到 Workflow Ag
 }
 ```
 
-<h4 id="H6sLM">模型支持</h4>
+#### 模型支持
 仓库里只支持了 OpenAI 和 Gemini 模型，这里我做了修改，支持了 Qwen3 模型，具体可查看 /workflow/gpt/requests.py 内容
 
 ```python
@@ -98,7 +98,7 @@ def request_siliconflow(provider: AIProvider, prompt, content):
 ![](快来领取你的免费AI每日新闻/siliconflow-2.png)
 
 
-<h4 id="PI27G">同步配置</h4>
+#### 同步配置
 <font style="color:rgb(25, 27, 31);">在仓库目录下找到 .github/workflows/main.yml，修改同步配置：</font>
 
 ```yaml
@@ -175,7 +175,7 @@ jobs:
 
 ```
 
-<h4 id="LQuSS">部署 & 定时同步</h4>
+#### 部署 & 定时同步
 使用 Vercel 部署（自定更换地址中的个人路径信息）：
 
 [https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhellomypastor%2FAIDailyNews&teamSlug=hellomypastors-projects](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhellomypastor%2FAIDailyNews&teamSlug=hellomypastors-projects)
@@ -198,7 +198,7 @@ jobs:
 
 ![](快来领取你的免费AI每日新闻/action.png)
 
-<h4 id="OtnTy">自定义域名</h4>
+#### 自定义域名
 Vercel 提供了域名，但域名比较长，不易记住
 
 ![](快来领取你的免费AI每日新闻/domain-1.png)
@@ -207,7 +207,7 @@ Vercel 提供了域名，但域名比较长，不易记住
 
 ![](快来领取你的免费AI每日新闻/domain-2.png)
 
-<h4 id="DvPwg">效果</h4>
+#### 效果
 Vercel 部署页面：
 
 ![](快来领取你的免费AI每日新闻/vercel-deploy.png)
@@ -216,12 +216,12 @@ Vercel 部署页面：
 
 ![](快来领取你的免费AI每日新闻/demo.png)
 
-<h4 id="DvPwg">扩展</h4>
+#### 扩展
 有一个 Chrome 插件，正好是做这个事情的，可以填自己的 API key 免费用，还支持配钉钉机器人定时推送：https://chromewebstore.google.com/detail/tidyread-read-more-in-les/gpfnpbpkadjgeoneammbiiidbkgkncaa
 
 ![](快来领取你的免费AI每日新闻/tidyread.png)
 
-<h3 id="e5gcs">原理</h3>
+### 原理
 
 ![](快来领取你的免费AI每日新闻/principle.png)
 
@@ -231,11 +231,11 @@ Vercel 部署页面：
 > 4. <font style="color:rgb(31, 35, 40);">支持 OpenAI、Gemini、Qwen3 等模型</font>
 >
 
-<h3 id="YL2kJ">写在最后</h3>
+### 写在最后
 整个搭建过程差不多耗时 1 小时，除了部署的时候遇到了几个坑之外，其他都很顺利，有兴趣的同学可以试试。
 
 让 AI 去帮我们分析总结 AI 相关的新闻，这件事在我看来还是很有趣很酷的。AI 时代，事情再难总有机会，不要怕，坚持下去，坚持到最后的胜利。
 
-<h3 id="nwIXL">参考</h3>
+### 参考
 【1】[https://github.com/zhangferry/AIDailyNews](https://github.com/zhangferry/AIDailyNews)
 
